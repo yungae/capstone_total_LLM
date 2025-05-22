@@ -121,7 +121,7 @@ def generate_recipe_or_reject():
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
 
-    if similarity_score < 0.6:
+    if similarity_score < 0.2:
         return jsonify({
             "name": recipe,
             "description": f"{ori}를 {sub}로 대체하는 것은 적절하지 않아 레시피를 생성할 수 없습니다.",
